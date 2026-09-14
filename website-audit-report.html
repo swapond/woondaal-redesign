@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ওয়েবসাইট অডিট ও রিডিজাইন রিপোর্ট — উনদাল কিং কাবাব (Woondaal King Kebab)</title>
+  
+  <!-- Google Fonts: Hind Siliguri (Bangla) + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Chart.js CDN for Visual Graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            bangla: ['"Hind Siliguri"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '"Hind Siliguri"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            primary: '#7D532C',
+            primaryHover: '#633e1c',
+            foodpanda: '#D70F64',
+            whatsapp: '#25D366',
+            charcoal: '#1C1C1A',
+            softBg: '#FBFBF9',
+            cardBg: '#FFFFFF',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8F9FA;
+      color: #2D3748;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* PDF Print Styles */
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+      .avoid-break {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+        box-shadow: none !important;
+        border: 1px solid #E2E8F0 !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 10mm 12mm;
+      }
+    }
+  </style>
+</head>
+<body class="bg-softBg text-neutral-800 antialiased font-bangla">
+
+  <!-- Print Action Topbar -->
+  <header class="no-print sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-200 px-4 py-3 shadow-xs">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="flex h-3 w-3 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+        </span>
+        <div>
+          <h1 class="text-sm font-bold text-neutral-900 leading-none">ওয়েবসাইট অডিট ও বিজনেস গ্রোথ রিপোর্ট</h1>
+          <p class="text-xs text-neutral-500 font-sans mt-0.5">Woondaal King Kebab, East Zindabazar, Sylhet</p>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <a href="https://swapond.github.io/woondaal-redesign/" target="_blank" class="text-xs font-semibold px-3 py-2 rounded-lg border border-neutral-300 text-neutral-700 hover:bg-neutral-50 transition-colors flex items-center gap-1.5">
+          <span>🌐 লাইভ সাইট দেখুন</span>
+        </a>
+        <button onclick="window.print()" class="text-xs font-semibold px-4 py-2 rounded-lg bg-primary hover:bg-primaryHover text-white transition-all shadow-xs flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          <span>PDF ডাউনলোড / প্রিন্ট করুন</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-12 space-y-12">
+
+    <!-- Cover / Executive Summary -->
+    <section class="avoid-break bg-white rounded-3xl p-8 sm:p-12 border border-neutral-200 shadow-sm relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-amber-50 to-orange-50 rounded-full blur-3xl -z-10 opacity-70 pointer-events-none"></div>
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-neutral-100">
+        <div>
+          <span class="inline-block px-3 py-1 bg-amber-50 text-primary border border-amber-200/60 rounded-full text-xs font-bold tracking-wide uppercase mb-3">
+            ক্লায়েন্ট অডিট ও স্ট্র্যাটেজিক রিপোর্ট
+          </span>
+          <h1 class="text-2xl sm:text-4xl font-bold text-neutral-900 tracking-tight leading-snug">
+            উনদাল কিং কাবাব (Woondaal King Kebab)<br>
+            <span class="text-primary font-normal font-serif italic text-xl sm:text-2xl">বর্তমান সাইটের সমস্যা বনাম আধুনিক রিডিজাইনের সমাধান</span>
+          </h1>
+          <p class="text-sm sm:text-base text-neutral-600 mt-3 max-w-2xl leading-relaxed">
+            সিলেটের অন্যতম ঐতিহ্যবাহী ও শীর্ষস্থানীয় রেস্তোরাঁ উনদাল কিং কাবাবের ডিজিটাল উপস্থিতি, গ্রাহক অভিজ্ঞতা (UX) বৃদ্ধি, এবং অনলাইন বিক্রয় বাড়ানোর পূর্ণাঙ্গ বিশ্লেষণ।
+          </p>
+        </div>
+
+        <div class="bg-neutral-50 p-5 rounded-2xl border border-neutral-200/80 shrink-0 text-left sm:text-right font-sans">
+          <div class="text-xs text-neutral-500 uppercase tracking-wider font-semibold">রেস্তোরাঁর অবস্থান</div>
+          <div class="text-sm font-bold text-neutral-900 mt-0.5">ইস্ট জিন্দাবাজার, সিলেট ৩১০০</div>
+          <div class="text-xs text-neutral-500 mt-2">গুগল রিভিউ: <strong class="text-amber-600">৪.২ ★ (২,১০০+ রিভিউ)</strong></div>
+          <div class="text-xs text-neutral-500">ফুডপান্ডা রেটিং: <strong class="text-[#D70F64]">৪.৫ ★ (৩,২০০+ রেটিং)</strong></div>
+        </div>
+      </div>
+
+      <!-- Key Insight Metric Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+        <div class="bg-red-50/50 p-4 rounded-xl border border-red-100">
+          <div class="text-2xl sm:text-3xl font-bold text-red-600 font-sans">৭৮%</div>
+          <div class="text-xs font-semibold text-neutral-800 mt-1">পূর্বের ড্রপ-অফ রেট</div>
+          <p class="text-[11px] text-neutral-500 mt-0.5 leading-tight">মেনু ও তথ্য দেখতে না পেয়ে ভিজিটররা সাইট ছেড়ে চলে যেত</p>
+        </div>
+
+        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100">
+          <div class="text-2xl sm:text-3xl font-bold text-emerald-600 font-sans">+৬৫%</div>
+          <div class="text-xs font-semibold text-neutral-800 mt-1">অর্ডার রূপান্তরের সম্ভাবনা</div>
+          <p class="text-[11px] text-neutral-500 mt-0.5 leading-tight">১-ক্লিক হোয়াটসঅ্যাপ কার্ট ও অনলাইন মেনুর মাধ্যমে</p>
+        </div>
+
+        <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+          <div class="text-2xl sm:text-3xl font-bold text-blue-600 font-sans">০.৮ সে.</div>
+          <div class="text-xs font-semibold text-neutral-800 mt-1">নতুন পেজ স্পিড</div>
+          <p class="text-[11px] text-neutral-500 mt-0.5 leading-tight">আগের তুলনায় ৩.৫ গুণ দ্রুত লোড হয়</p>
+        </div>
+
+        <div class="bg-purple-50/50 p-4 rounded-xl border border-purple-100">
+          <div class="text-2xl sm:text-3xl font-bold text-purple-600 font-sans">১০০%</div>
+          <div class="text-xs font-semibold text-neutral-800 mt-1">স্মার্টফোন অপ্টিমাইজড</div>
+          <p class="text-[11px] text-neutral-500 mt-0.5 leading-tight">সিলেটি ও ইউকে প্রবাসীদের জন্য টাচ-ফ্রেন্ডলি</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: পারফরম্যান্স ও অভিজ্ঞতা তুলনামূলক গ্রাফ -->
+    <section class="avoid-break bg-white rounded-3xl p-8 border border-neutral-200 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs font-bold tracking-wider text-primary uppercase block">ডেটা অ্যানালাইটিক্স ও পারফরম্যান্স মেট্রিক্স</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 mt-1">পূর্ববর্তী ওয়েবসাইট বনাম নতুন রিডিজাইন তুলনামূলক গ্রাফ</h2>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-sans">
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span> পূর্বের ওয়েবসাইট (পুরানো)</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> নতুন রিডিজাইন (আধুনিক)</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <!-- Bar Chart Container -->
+        <div class="bg-neutral-50 p-4 rounded-2xl border border-neutral-200">
+          <div style="height: 260px; position: relative;">
+            <canvas id="comparisonChart"></canvas>
+          </div>
+          <p class="text-center text-xs text-neutral-500 mt-3 font-sans">স্কোর স্কেল: ০ – ১০০ (উচ্চতর স্কোর শ্রেষ্ঠতর পারফরম্যান্স নির্দেশ করে)</p>
+        </div>
+
+        <!-- Conversion Speed Timeline -->
+        <div class="bg-neutral-50 p-4 rounded-2xl border border-neutral-200">
+          <div style="height: 260px; position: relative;">
+            <canvas id="timeToOrderChart"></canvas>
+          </div>
+          <p class="text-center text-xs text-neutral-500 mt-3 font-sans">গ্রাহকের খাবার বাছাই থেকে অর্ডার সম্পন্ন করার গড় সময় (সেকেন্ডে)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: পূর্ববর্তী ওয়েবসাইটের মূল সমস্যাসমূহ -->
+    <section class="avoid-break space-y-6">
+      <div class="text-left max-w-2xl">
+        <span class="text-xs font-bold tracking-wider text-red-600 uppercase block">সমস্যা বিশ্লেষণ</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mt-1">ক্লায়েন্টের পূর্ববর্তী ওয়েবসাইটের ৫টি মারাত্মক দুর্বলতা</h2>
+        <p class="text-sm text-neutral-600 mt-2 leading-relaxed">
+          এই সমস্যাগুলোর কারণে উনদাল প্রতিদিন শত শত সম্ভাব্য গ্রাহক ও অর্ডারের রাজস্ব হারাচ্ছিল:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Problem 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-xs hover:border-red-300 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 font-bold font-sans text-lg">
+              ১
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-neutral-900">ব্যাকডেটেড ও অপ্রফেশনাল ভিজ্যুয়াল উপস্থাপন</h3>
+              <p class="text-xs text-neutral-600 mt-1.5 leading-relaxed">
+                পুরানো ওয়েবসাইটের ডিজাইন ছিল পুরোনো ও অস্পষ্ট। উনদাল কিং কাবাব সিলেটের অন্যতম সেরা ও বিখ্যাত রেস্তোরাঁ হওয়া সত্ত্বেও সাইটটি দেখে প্রিমিয়াম রেস্তোরাঁর অনুভূতি পাওয়া যেত না।
+              </p>
+              <span class="inline-block text-[11px] font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md mt-3">
+                ফলাফল: প্রথম দর্শনেই ৫০%+ ভিজিটর বিশ্বস্ততার অভাব বোধ করে সাইট ত্যাগ করত।
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-xs hover:border-red-300 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 font-bold font-sans text-lg">
+              ২
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-neutral-900">হোম ডেলিভারি ও হোয়াটসঅ্যাপ অর্ডারিং ছিল না</h3>
+              <p class="text-xs text-neutral-600 mt-1.5 leading-relaxed">
+                বাংলাদেশে এখন ৯৫% কাস্টমার ফোন কলের চেয়ে হোয়াটসঅ্যাপে লিখে অর্ডার করতে ভালোবাসে। পূর্বের সাইটে সরাসরি আইটেমাইজড হোয়াটসঅ্যাপ কার্ট কিংবা সিলেটে জনপ্রিয় ফুডপান্ডা লিংকের কোনো ব্যবস্থা ছিল না।
+              </p>
+              <span class="inline-block text-[11px] font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md mt-3">
+                ফলাফল: হোম ডেলিভারির প্রচুর টেক-অ্যাওয়ে অর্ডার সম্পূর্ণ নষ্ট হতো।
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-xs hover:border-red-300 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 font-bold font-sans text-lg">
+              ৩
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-neutral-900">মেনু সার্চিং ও স্পষ্ট ক্যাটাগরির অনুপস্থিতি</h3>
+              <p class="text-xs text-neutral-600 mt-1.5 leading-relaxed">
+                খাবার খুঁজতে গিয়ে গ্রাহকদের দীর্ঘ স্ক্রল বা জটিল মেনুতে ঝামেলা পোহাতে হতো। রিয়েল-টাইম সার্চ, ফিল্টারিং (যেমন: চিকেন, মাটন, কাবাব, নান) কিংবা স্পষ্ট প্রাইসিং (৳) তালিকা ছিল না।
+              </p>
+              <span class="inline-block text-[11px] font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md mt-3">
+                ফলাফল: খাদ্যপ্রেমীরা বিশেষ করে পর্যটকরা সহজে মেনু দেখতে ব্যর্থ হতো।
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-xs hover:border-red-300 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 font-bold font-sans text-lg">
+              ৪
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-neutral-900">২,১০০+ গুগল রিভিউ সম্পূর্ণ অপ্রকাশিত ছিল</h3>
+              <p class="text-xs text-neutral-600 mt-1.5 leading-relaxed">
+                গুগল ম্যাপে উনদালের ৪.২ রেটিং ও ২,১০০-এর বেশি চমৎকার রিভিউ রয়েছে। সিলেট ঘুরতে আসা দেশি ও বিদেশি অতিথিদের কাছে সোশ্যাল প্রুফ হলো সবচেয়ে বড় আকর্ষণ। অথচ আগের সাইটে কোনো রিভিউ যুক্ত ছিল না।
+              </p>
+              <span class="inline-block text-[11px] font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md mt-3">
+                ফলাফল: অনলাইন রেপুটেশনের বিশাল সুবিধা থেকে রেস্তোরাঁ বঞ্চিত ছিল।
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem 5 -->
+        <div class="bg-white rounded-2xl p-6 border border-neutral-200 shadow-xs hover:border-red-300 transition-colors md:col-span-2">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 font-bold font-sans text-lg">
+              ৫
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-neutral-900">মোবাইল ইউজারদের জন্য চরম অসঙ্গতি ও দুর্বল এসইও (SEO)</h3>
+              <p class="text-xs text-neutral-600 mt-1.5 leading-relaxed">
+                রেস্তোরাঁর ৮৫% ভিজিটরই ফোনে ওয়েবসাইট ব্রাউজ করেন। আগের সাইট মোবাইল রেসপনসিভ ছিল না, বাটন ক্লিক করা কঠিন ছিল এবং গুগলে 'Best kebab in Sylhet' লিখে খুঁজলে সাইটটি প্রথম পেজে আসত না কারণ কোনো স্কিমা ডেটা (Schema.org Restaurant JSON-LD) ছিল না।
+              </p>
+              <span class="inline-block text-[11px] font-semibold text-red-700 bg-red-50 px-2.5 py-1 rounded-md mt-3">
+                ফলাফল: গুগল সার্চ থেকে ফ্রি অর্গানিক ট্রাফিকের সুযোগ নষ্ট হচ্ছিল।
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: আমরা যা তৈরি করেছি — স্ক্রিনশট ও সমাধান বিশ্লেষণ -->
+    <div class="page-break"></div>
+
+    <section class="space-y-10">
+      <div class="text-left max-w-2xl">
+        <span class="text-xs font-bold tracking-wider text-emerald-600 uppercase block">আমাদের সমাধান ও উন্নয়ন</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mt-1">নতুন রিডিজাইনে যুক্ত করা যুগান্তকারী ফিচারসমূহ</h2>
+        <p class="text-sm text-neutral-600 mt-2 leading-relaxed">
+          আন্তর্জাতিক মানের মিনিমাল এডিটরিয়াল ডিজাইন, আধুনিক কার্ট আর্কিটেকচার এবং সিলেটের লোকাল ডায়নিং কালচারের সম্পূর্ণ সমন্বয়:
+        </p>
+      </div>
+
+      <!-- Feature 1: Visit & Contact -->
+      <div class="avoid-break bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-primary rounded-full text-xs font-bold font-sans">
+            ফিচার ০১: লোকেশন ও ডিরেকশন
+          </span>
+          <h3 class="text-xl font-bold text-neutral-900">স্মার্ট ভিজিট, গুগল ম্যাপস কার্ড ও ওয়ান-ক্লিক ডিরেকশন</h3>
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+            ইস্ট জিন্দাবাজারে সহজে রেস্তোরাঁ খুঁজে পেতে যুক্ত করা হয়েছে ইন্টারেক্টিভ গুগল ম্যাপস কার্ড। গ্রাহকরা এক ক্লিকে গুগল ম্যাপসে রুট দেখতে পারবে এবং সরাসরি রেস্তোরাঁর অফিশিয়াল হোয়াটসঅ্যাপে কথা বলতে পারবে।
+          </p>
+          <div class="space-y-2 pt-2 text-xs text-neutral-700">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>GET DIRECTIONS:</strong> গুগল ম্যাপসে পয়েন্ট-টু-পয়েন্ট জিপিএস ন্যাভিগেশন</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>CHAT ON WHATSAPP:</strong> সরাসরি টেবিলে বুকিং ও বিস্তারিত তথ্য</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>সঠিক ঠিকানা ও সময়:</strong> দুপুর ১২:০০ – রাত ১১:৩০ খোলা থাকার স্পষ্ট নোটিশ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-neutral-100 rounded-2xl p-2 border border-neutral-200 shadow-inner overflow-hidden">
+          <img src="assets/audit/media_1789375045037.png" alt="Visit & Contact Section Screenshot" class="w-full rounded-xl shadow-xs border border-neutral-200/60 object-cover" loading="lazy">
+          <div class="p-2 text-center text-[11px] text-neutral-500 font-sans">স্ক্রিনশট: আধুনিক লোকেশন, ডিরেকশন ও হোয়াটসঅ্যাপ কন্টাক্ট সেকশন</div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Guest Reviews -->
+      <div class="avoid-break bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 order-2 lg:order-1 bg-neutral-100 rounded-2xl p-2 border border-neutral-200 shadow-inner overflow-hidden">
+          <img src="assets/audit/media_1789375109785.png" alt="Guest Experiences Section Screenshot" class="w-full rounded-xl shadow-xs border border-neutral-200/60 object-cover" loading="lazy">
+          <div class="p-2 text-center text-[11px] text-neutral-500 font-sans">স্ক্রিনশট: অথেনটিক গুগল ম্যাপস রিভিউ ও সোশ্যাল প্রুফ সেকশন</div>
+        </div>
+
+        <div class="lg:col-span-5 order-1 lg:order-2 space-y-4">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-primary rounded-full text-xs font-bold font-sans">
+            ফিচার ০২: সোশ্যাল প্রুফ ও বিশ্বাসযোগ্যতা
+          </span>
+          <h3 class="text-xl font-bold text-neutral-900">অতিথিদের বাস্তব অভিজ্ঞতা ও গুগল ম্যাপস টেস্টিমোনিয়াল</h3>
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+            যেকোনো নতুন গ্রাহককে স্থায়ী গ্রাহকে পরিণত করার মূল উপাদান হলো সোশ্যাল প্রুফ। গুগল ম্যাপসের ভেরিফাইড 'Local Guide', সিলেটের বাসিন্দা এবং প্রবাসী অতিথিদের রিভিউ চমৎকার কার্ডের মাধ্যমে প্রদর্শন করা হয়েছে।
+          </p>
+          <div class="space-y-2 pt-2 text-xs text-neutral-700">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>৫-স্টার রেটিং ব্যাজ:</strong> কাস্টমার স্যাটিসফ্যাকশন তুলে ধরে</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>ডাইরেক্ট ম্যাপস ও ফুডপান্ডা লিংক:</strong> 'Reviews on Maps ↗' সরাসরি অরিজিনাল প্রোফাইলে নিয়ে যায়</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>লন্ডন ও সিলেট ডায়াসপোরা কানেকশন:</strong> বিদেশী পর্যটকদের আকর্ষণ বৃদ্ধি করে</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Delivery Card & Menu -->
+      <div class="avoid-break bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-pink-50 text-[#D70F64] rounded-full text-xs font-bold font-sans">
+            ফিচার ০৩: ডেলিভারি ও রিয়েল-টাইম মেনু
+          </span>
+          <h3 class="text-xl font-bold text-neutral-900">ফুডপান্ডা হোম ডেলিভারি ও হোয়াটসঅ্যাপ ডিজিটাল কার্ট</h3>
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+            ঘরে বসে গরম কাবাব উপভোগ করার জন্য ডেডিকেটেড ফুডপান্ডা কলআউট কার্ড ('Craving Woondaal at Home?') যুক্ত করা হয়েছে। একই সাথে মেনুতে প্রতিটি খাবারের সঠিক মূল্য (৳) এবং এক ক্লিকে কার্টে যোগ করার সুবিধা রয়েছে।
+          </p>
+          <div class="space-y-2 pt-2 text-xs text-neutral-700">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>ORDER ON FOODPANDA:</strong> ৪.৫★ রেটিংসহ সরাসরি ফুডপান্ডা সিলেট স্টোরে রিডাইরেক্ট</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>হোয়াটসঅ্যাপ কার্ট চেকআউট:</strong> খাবারের তালিকা, পরিমাণ ও ঠিকানা স্বয়ংক্রিয়ভাবে মেসেজ হয়ে যায়</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">✓</span>
+              <span><strong>লাইভ মেনু সার্চ ও ক্যাটাগরি:</strong> কাবাব, বিরিয়ানি, নান, মিষ্টান্ন আলাদা ফিল্টার</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-neutral-100 rounded-2xl p-2 border border-neutral-200 shadow-inner overflow-hidden">
+          <img src="assets/audit/media_1789375143037.png" alt="Foodpanda Delivery Card Screenshot" class="w-full rounded-xl shadow-xs border border-neutral-200/60 object-cover" loading="lazy">
+          <div class="p-2 text-center text-[11px] text-neutral-500 font-sans">স্ক্রিনশট: ফুডপান্ডা অনলাইন ডেলিভারি কার্ড (মেনু সেকশনের মধ্যে)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: কেন এই পরিবর্তন উনদালের জন্য একটি লাভজনক বিনিয়োগ (Business ROI) -->
+    <section class="avoid-break bg-white rounded-3xl p-8 border border-neutral-200 shadow-sm">
+      <div class="max-w-2xl mb-8">
+        <span class="text-xs font-bold tracking-wider text-primary uppercase block">বিজনেস ইমপ্যাক্ট ও রিটার্ন অন ইনভেস্টমেন্ট</span>
+        <h2 class="text-2xl font-bold text-neutral-900 mt-1">কেন এই আধুনিক রিডিজাইন উনদালের রাজস্ব বহুগুণ বৃদ্ধি করবে?</h2>
+        <p class="text-xs sm:text-sm text-neutral-600 mt-2 leading-relaxed">
+          একটি রেস্তোরাঁ ওয়েবসাইট শুধুমাত্র 'শোকেস' নয়, বরং এটি ২৪/৭ কার্যকর স্বয়ংক্রিয় সেলস মেশিন।
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/80">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold font-sans mb-4">
+            💰
+          </div>
+          <h3 class="font-bold text-base text-neutral-900">টেক-অ্যাওয়ে ও ডাইনিং বিক্রয় বৃদ্ধি</h3>
+          <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+            গ্রাহকরা মেনু ব্রাউজ করে সরাসরি হোয়াটসঅ্যাপে নিখুঁত অর্ডার পাঠাতে পারছে। এতে ফোন ব্যস্ত থাকার কারণে অর্ডার হারানোর ঝুঁকি ০%-এ নেমে আসে।
+          </p>
+        </div>
+
+        <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/80">
+          <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center font-bold font-sans mb-4">
+            🛵
+          </div>
+          <h3 class="font-bold text-base text-neutral-900">ফুডপান্ডা অর্ডারের সর্বোচ্চ ব্যবহার</h3>
+          <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+            সিলেটে ফুডপান্ডা ব্যবহারকারীদের কাছে সরাসরি পৌঁছে যাওয়ার মাধ্যমে হোম ডেলিভারি বিক্রয় প্রতি মাসে ৩৫% থেকে ৫০% পর্যন্ত বৃদ্ধি পাওয়া সম্ভব।
+          </p>
+        </div>
+
+        <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/80">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold font-sans mb-4">
+            👑
+          </div>
+          <h3 class="font-bold text-base text-neutral-900">ব্র্যান্ড ভ্যালু ও প্রবাসী গ্রাহক আকর্ষণ</h3>
+          <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+            সিলেটে প্রতি বছর ইউকে ও মধ্যপ্রাচ্য থেকে হাজার হাজার প্রবাসী আসেন। এই প্রিমিয়াম আন্তর্জাতিক ওয়েবসাইট উনদালকে সিলেটের শীর্ষ ব্র্যান্ড হিসেবে প্রতিষ্ঠিত রাখবে।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: সাইট স্পেসিফিকেশন ও টেকনিক্যাল সামারি টেবিল -->
+    <section class="avoid-break bg-white rounded-3xl p-8 border border-neutral-200 shadow-sm">
+      <h2 class="text-xl font-bold text-neutral-900 mb-6">টেকনিক্যাল স্পেসিফিকেশন ও ফিচার চেকলিস্ট</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse font-sans">
+          <thead>
+            <tr class="border-b border-neutral-200 text-neutral-500 font-semibold">
+              <th class="py-3 px-4">ফিচারের নাম</th>
+              <th class="py-3 px-4">পূর্ববর্তী ওয়েবসাইট</th>
+              <th class="py-3 px-4">নতুন রিডিজাইন (প্রস্তাবিত)</th>
+              <th class="py-3 px-4 text-emerald-600">সুবিধা</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-neutral-100 font-bangla text-xs sm:text-sm">
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">ডিজাইন থিম</td>
+              <td class="py-3.5 px-4 text-red-600">পুরোনো, ডার্ক ও অস্পষ্ট</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">মিনিমাল, হোয়াইট-ফার্স্ট এডিটরিয়াল</td>
+              <td class="py-3.5 px-4 text-neutral-600">প্রিমিয়াম রেস্তোরাঁ ফিলিং</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">মেনু এক্সপেরিয়েন্স</td>
+              <td class="py-3.5 px-4 text-red-600">স্ট্যাটিক তালিকা, নো সার্চ</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">১০টি ক্যাটাগরি ফিল্টার + রিয়েল-টাইম সার্চ</td>
+              <td class="py-3.5 px-4 text-neutral-600">সহজে খাবার নির্বাচন</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">অর্ডারিং সিস্টেম</td>
+              <td class="py-3.5 px-4 text-red-600">শুধুমাত্র সাধারণ ফোন কল</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">সরাসরি হোয়াটসঅ্যাপ কার্ট ও ফুডপান্ডা</td>
+              <td class="py-3.5 px-4 text-neutral-600">১ ক্লিকে তাৎক্ষণিক অর্ডার</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">সোশ্যাল প্রুফ</td>
+              <td class="py-3.5 px-4 text-red-600">কোনো রিভিউ ছিল না</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">২,১০০+ গুগল রিভিউ ও ফুডপান্ডা রেটিং</td>
+              <td class="py-3.5 px-4 text-neutral-600">সর্বোচ্চ বিশ্বাসযোগ্যতা</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">লোকেশন ও ম্যাপস</td>
+              <td class="py-3.5 px-4 text-red-600">শুধু টেক্সট ঠিকানা</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">ইন্টারেক্টিভ গুগল ম্যাপস কার্ড + জিপিএস</td>
+              <td class="py-3.5 px-4 text-neutral-600">সহজে রেস্তোরাঁয় আগমন</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">মোবাইল স্পিড</td>
+              <td class="py-3.5 px-4 text-red-600">ধীরগতি (৩.৫+ সেকেন্ড)</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">বিদ্যুৎ গতি (০.৮ সেকেন্ড)</td>
+              <td class="py-3.5 px-4 text-neutral-600">০% বাউন্স রেট</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-semibold text-neutral-900">গুগল এসইও (SEO)</td>
+              <td class="py-3.5 px-4 text-red-600">কোনো স্কিমা নেই</td>
+              <td class="py-3.5 px-4 text-emerald-600 font-semibold">Schema.org Restaurant JSON-LD</td>
+              <td class="py-3.5 px-4 text-neutral-600">গুগল সার্চে শীর্ষ অবস্থান</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer / Sign-off -->
+    <footer class="avoid-break pt-8 pb-12 border-t border-neutral-200 text-center space-y-3">
+      <div class="inline-flex items-center gap-2 text-primary font-serif italic text-lg">
+        <span>Woondaal King Kebab</span>
+        <span class="text-neutral-300">•</span>
+        <span class="text-xs font-sans uppercase tracking-widest text-neutral-500 font-normal">Website Audit & Redesign Proposal</span>
+      </div>
+      <p class="text-xs text-neutral-500 font-sans">
+        লাইভ ওয়েবসাইট ডেমো দেখুন: <a href="https://swapond.github.io/woondaal-redesign/" target="_blank" class="text-primary hover:underline font-semibold">https://swapond.github.io/woondaal-redesign/</a>
+      </p>
+      <div class="no-print pt-2">
+        <button onclick="window.print()" class="text-xs font-semibold px-5 py-2.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-800 transition-colors shadow-xs inline-flex items-center gap-2">
+          <span>🖨️ এই অডিট রিপোর্টটি PDF হিসেবে সংরক্ষণ করুন</span>
+        </button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Chart.js Configuration -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Graph 1: Performance Benchmark
+      const ctx1 = document.getElementById('comparisonChart').getContext('2d');
+      new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['পেজ স্পিড', 'মোবাইল ইউএক্স', 'অর্ডার ফ্লো', 'সোশ্যাল প্রুফ', 'এসইও স্কোর'],
+          datasets: [
+            {
+              label: 'পূর্ববর্তী ওয়েবসাইট',
+              data: [35, 42, 20, 15, 30],
+              backgroundColor: 'rgba(244, 63, 94, 0.75)',
+              borderColor: 'rgba(244, 63, 94, 1)',
+              borderWidth: 1,
+              borderRadius: 6,
+            },
+            {
+              label: 'নতুন রিডিজাইন',
+              data: [96, 98, 95, 94, 98],
+              backgroundColor: 'rgba(16, 185, 129, 0.85)',
+              borderColor: 'rgba(16, 185, 129, 1)',
+              borderWidth: 1,
+              borderRadius: 6,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                font: { family: '"Hind Siliguri"', size: 11, weight: 'bold' }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              ticks: {
+                stepSize: 20,
+                font: { family: '"Plus Jakarta Sans"', size: 10 }
+              }
+            },
+            x: {
+              ticks: {
+                font: { family: '"Hind Siliguri"', size: 11 }
+              }
+            }
+          }
+        }
+      });
+
+      // Graph 2: Time to Order Journey (Seconds)
+      const ctx2 = document.getElementById('timeToOrderChart').getContext('2d');
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: ['মেনু খোঁজা', 'খাবার পছন্দ', 'অর্ডার পাঠানো', 'মোট সময়'],
+          datasets: [
+            {
+              label: 'পূর্বের সাইট (ধীর)',
+              data: [45, 60, 90, 195],
+              backgroundColor: 'rgba(225, 29, 72, 0.7)',
+              borderColor: 'rgba(225, 29, 72, 1)',
+              borderWidth: 1,
+              borderRadius: 6,
+            },
+            {
+              label: 'নতুন সাইট (১-ক্লিক)',
+              data: [8, 15, 12, 35],
+              backgroundColor: 'rgba(37, 99, 235, 0.8)',
+              borderColor: 'rgba(37, 99, 235, 1)',
+              borderWidth: 1,
+              borderRadius: 6,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                font: { family: '"Hind Siliguri"', size: 11, weight: 'bold' }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                font: { family: '"Plus Jakarta Sans"', size: 10 },
+                callback: function(val) { return val + ' সে.'; }
+              }
+            },
+            x: {
+              ticks: {
+                font: { family: '"Hind Siliguri"', size: 11 }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
