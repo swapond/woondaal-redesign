@@ -36,10 +36,10 @@ Designed with a calm, white-first aesthetic, refined typography, authentic Googl
 
 No build tools or Node.js required. Open index.html directly in your browser or run a local static server:
 
-`ash
+```bash
 # Python 3
 python -m http.server 8080
-`
+```
 
 Then visit [http://localhost:8080](http://localhost:8080).
 
