@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woondaal King Kebab — Authentic Flavours, Memorable Moments</title>
+  <meta name="description" content="Experience the finest kebabs and North Indian cuisine in Sylhet at Woondaal King Kebab. 465, East Zindabazar, Sylhet. Open daily 11:00 AM – 11:00 PM." />
+  <link rel="canonical" href="https://woondaal.com/" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:title" content="Woondaal King Kebab — Authentic Flavours, Memorable Moments" />
+  <meta property="og:description" content="Experience the finest kebabs and North Indian cuisine in Sylhet. East Zindabazar, Sylhet." />
+  <meta property="og:image" content="assets/hero_skewers.jpg" />
+  <meta property="og:url" content="https://woondaal.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/woondaal_logo.jpg" />
+
+  <!-- Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            caramel: {
+              DEFAULT: '#855B32',
+              hover: '#734D28',
+              light: '#F8F4EE',
+              border: '#E8DFD3'
+            },
+            charcoal: '#1A1A1A',
+            stoneGrey: '#666666',
+            lightBorder: '#EFEFEF',
+            softBg: '#FAFAF9'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Verified Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Woondaal King Kebab",
+    "image": "assets/hero_skewers.jpg",
+    "logo": "assets/woondaal_logo.jpg",
+    "url": "https://woondaal.com/",
+    "telephone": "+8801717020505",
+    "servesCuisine": ["Indian", "Bangladeshi", "Kebab", "Halal"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "465, East Zindabazar, Baruthkhana Road",
+      "addressLocality": "Sylhet",
+      "postalCode": "3100",
+      "addressCountry": "BD"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 24.8952252,
+      "longitude": 91.8708695
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "23:00"
+      }
+    ],
+    "hasMap": "https://maps.app.goo.gl/6CX57Ad3P3itRKwUA",
+    "priceRange": "৳60 - ৳850"
+  }
+  </script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #FAFAF9; }
+    ::-webkit-scrollbar-thumb { background: #D6D3CD; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #855B32; }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+  <!-- Menu Data -->
+  <script src="./menu-data.js"></script>
+</head>
+<body 
+  x-data="restaurantApp()" 
+  x-init="init()"
+  class="bg-white text-charcoal font-sans antialiased selection:bg-caramel-light selection:text-caramel min-h-screen flex flex-col"
+>
+
+  <!-- ACCESSIBILITY SKIP LINK -->
+  <a 
+    href="#menu" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-charcoal focus:text-white focus:text-xs focus:rounded-full focus:outline-none"
+  >
+    Skip to Menu
+  </a>
+
+  <!-- ================= HEADER ================= -->
+  <header 
+    :class="scrolled ? 'bg-white/95 backdrop-blur-md shadow-xs py-3 border-b border-lightBorder' : 'bg-white py-5 sm:py-6 border-b border-transparent'"
+    class="sticky top-0 z-40 transition-all duration-200"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo Wordmark (Flame Icon + WOONDAAL KING KEBAB) -->
+      <a href="#top" class="flex flex-col items-center group text-decoration-none" aria-label="Woondaal King Kebab Home">
+        <svg class="w-5 h-5 text-caramel group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+        </svg>
+        <span class="font-serif text-lg sm:text-xl font-semibold tracking-[0.22em] text-charcoal uppercase leading-tight mt-0.5">
+          Woondaal
+        </span>
+        <span class="text-[7.5px] sm:text-[8px] tracking-[0.3em] font-medium text-stoneGrey uppercase">
+          King Kebab
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-7 text-xs uppercase tracking-[0.18em] font-medium text-stoneGrey">
+        <a href="#top" class="hover:text-charcoal transition-colors">Home</a>
+        <a href="#menu" class="hover:text-charcoal transition-colors">Menu</a>
+        <a href="#about" class="hover:text-charcoal transition-colors">About</a>
+        <a href="#gallery" class="hover:text-charcoal transition-colors">Gallery</a>
+        <a href="#reviews" class="hover:text-charcoal transition-colors">Reviews</a>
+        <a href="#visit" class="hover:text-charcoal transition-colors">Visit</a>
+      </nav>
+
+      <!-- Right Header Actions: Cart + Reserve a Table Button -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        
+        <!-- Cart / Tray Trigger Button -->
+        <button 
+          @click="cartDrawerOpen = true"
+          type="button"
+          class="relative inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-lightBorder hover:border-caramel bg-white text-charcoal text-xs font-medium transition-colors shadow-2xs min-h-[42px]"
+          aria-label="View current order tray"
+        >
+          <i data-lucide="shopping-bag" class="w-4 h-4 text-caramel"></i>
+          <span class="hidden sm:inline font-sans">Tray</span>
+          <span 
+            x-show="cartTotalCount > 0" 
+            x-text="cartTotalCount" 
+            class="w-4 h-4 rounded-full bg-caramel text-white text-[10px] font-bold flex items-center justify-center -mr-0.5"
+          ></span>
+        </button>
+
+        <!-- Reserve a Table Pill Button -->
+        <button 
+          @click="reservationModalOpen = true"
+          type="button"
+          class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-caramel hover:bg-caramel-hover text-white text-xs uppercase tracking-[0.16em] font-medium transition-colors shadow-xs min-h-[42px]"
+        >
+          Reserve a Table
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          @click="mobileNavOpen = !mobileNavOpen" 
+          type="button"
+          class="md:hidden p-2 rounded-full text-charcoal hover:bg-softBg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+          :aria-expanded="mobileNavOpen.toString()"
+          aria-label="Toggle Navigation Menu"
+        >
+          <i :data-lucide="mobileNavOpen ? 'x' : 'menu'" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div 
+      x-show="mobileNavOpen" 
+      x-cloak 
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      @click.away="mobileNavOpen = false"
+      class="md:hidden border-b border-lightBorder bg-white px-6 py-6 shadow-lg"
+    >
+      <nav class="flex flex-col space-y-4 text-sm font-medium text-charcoal">
+        <a @click="mobileNavOpen = false" href="#top" class="py-2 border-b border-lightBorder flex items-center justify-between">
+          <span>Home</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stoneGrey"></i>
+        </a>
+        <a @click="mobileNavOpen = false" href="#menu" class="py-2 border-b border-lightBorder flex items-center justify-between">
+          <span>Menu</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stoneGrey"></i>
+        </a>
+        <a @click="mobileNavOpen = false" href="#about" class="py-2 border-b border-lightBorder flex items-center justify-between">
+          <span>About</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stoneGrey"></i>
+        </a>
+        <a @click="mobileNavOpen = false" href="#gallery" class="py-2 border-b border-lightBorder flex items-center justify-between">
+          <span>Gallery</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stoneGrey"></i>
+        </a>
+        <a @click="mobileNavOpen = false" href="#reviews" class="py-2 border-b border-lightBorder flex items-center justify-between">
+          <span>Reviews &amp; Ratings</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stoneGrey"></i>
+        </a>
+        <a @click="mobileNavOpen = false" href="#visit" class="py-2 border-b border-lightBorder flex items-center justify-between">
+          <span>Visit &amp; Contact</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stoneGrey"></i>
+        </a>
+
+        <div class="pt-4 flex flex-col gap-3">
+          <button 
+            @click="mobileNavOpen = false; cartDrawerOpen = true"
+            type="button"
+            class="w-full text-center py-3 rounded-full border border-caramel text-caramel hover:bg-caramel-light text-xs uppercase tracking-widest font-medium flex items-center justify-center gap-2"
+          >
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>View Order (<span x-text="cartTotalCount"></span>) • <span x-text="cartTotalPriceFormatted"></span></span>
+          </button>
+          
+          <button 
+            @click="mobileNavOpen = false; reservationModalOpen = true"
+            type="button"
+            class="w-full text-center py-3 rounded-full bg-caramel text-white text-xs uppercase tracking-widest font-medium"
+          >
+            Reserve a Table
+          </button>
+          
+          <a 
+            href="tel:+8801717020505" 
+            class="w-full text-center py-3 rounded-full border border-lightBorder bg-softBg text-charcoal text-xs uppercase tracking-widest font-medium flex items-center justify-center gap-2"
+          >
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-caramel"></i>
+            <span>+880 1717-020505</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="top" class="px-3 sm:px-8 pb-12 sm:pb-20">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[540px] sm:min-h-[620px] flex items-center shadow-md bg-neutral-900">
+        
+        <!-- Background Imagery -->
+        <img 
+          src="assets/hero_skewers.jpg" 
+          alt="Authentic Grilled Kebabs at Woondaal" 
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+        />
+
+        <!-- Warm Atmospheric Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 sm:w-3/4"></div>
+
+        <!-- Left Content -->
+        <div class="relative z-10 p-6 sm:p-14 md:p-16 max-w-2xl text-left">
+          
+          <p class="text-[10px] sm:text-xs uppercase tracking-[0.28em] text-neutral-300 font-medium mb-3 sm:mb-4">
+            Good Food Brings People Together
+          </p>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-[68px] text-white font-normal leading-[1.06] tracking-tight">
+            Authentic<br />
+            Flavours,<br />
+            Memorable<br />
+            Moments
+          </h1>
+
+          <p class="text-neutral-300 text-xs sm:text-sm font-light mt-4 sm:mt-5 max-w-md leading-relaxed">
+            Experience the finest kebabs and North Indian cuisine in Sylhet.
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-7 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            <a 
+              href="#menu" 
+              class="px-7 py-3 rounded-full bg-caramel hover:bg-caramel-hover text-white text-xs uppercase tracking-[0.16em] font-medium transition-colors shadow-xs min-h-[44px] flex items-center justify-center"
+            >
+              View Menu
+            </a>
+
+            <a 
+              href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-7 py-3 rounded-full border border-white/85 hover:bg-white/15 text-white text-xs uppercase tracking-[0.16em] font-medium transition-colors min-h-[44px] flex items-center justify-center"
+            >
+              Get Directions
+            </a>
+          </div>
+
+          <!-- Slider Numbers & Controls at bottom-left -->
+          <div class="mt-12 sm:mt-16 flex items-center gap-6 text-xs text-neutral-400 font-medium">
+            <div class="flex items-center gap-3 tracking-widest">
+              <span class="text-white font-semibold border-b border-white pb-0.5">01</span>
+              <span>02</span>
+              <span>03</span>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button 
+                type="button" 
+                class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-colors"
+                aria-label="Previous slide"
+              >
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button 
+                type="button" 
+                class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-colors"
+                aria-label="Next slide"
+              >
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SIGNATURE DISHES ================= -->
+  <section class="py-12 sm:py-20 border-b border-lightBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex items-center justify-between mb-8 sm:mb-12">
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
+          Our Signature Dishes
+        </h2>
+
+        <a 
+          href="#menu" 
+          class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 hover:text-charcoal font-medium flex items-center gap-1.5 transition-colors"
+        >
+          <span>View Full Menu</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- 4-Card Row matching Mockup -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Chicken Reshmi Kebab -->
+        <div class="bg-white rounded-xl overflow-hidden group flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+              <img 
+                src="assets/reshmi_kebab.jpg" 
+                alt="Chicken Reshmi Kebab" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="pt-3.5 space-y-1 text-left">
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-medium text-charcoal text-sm">Chicken Reshmi Kebab</h3>
+                <span class="font-sans font-semibold text-charcoal text-sm">৳ 320</span>
+              </div>
+              <p class="text-xs text-stoneGrey leading-relaxed">
+                Juicy grilled chicken with a creamy, aromatic marinade.
+              </p>
+            </div>
+          </div>
+          <div class="pt-3 flex justify-end">
+            <button 
+              @click.stop="addToCartById(1)"
+              type="button"
+              class="px-3.5 py-1.5 rounded-full border border-lightBorder hover:border-caramel hover:bg-caramel-light text-charcoal hover:text-caramel text-xs font-medium transition-colors flex items-center gap-1"
+            >
+              <i data-lucide="plus" class="w-3 h-3"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Mutton Kebab -->
+        <div class="bg-white rounded-xl overflow-hidden group flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+              <img 
+                src="assets/mutton_kebab.jpg" 
+                alt="Mutton Kebab" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="pt-3.5 space-y-1 text-left">
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-medium text-charcoal text-sm">Mutton Kebab</h3>
+                <span class="font-sans font-semibold text-charcoal text-sm">৳ 450</span>
+              </div>
+              <p class="text-xs text-stoneGrey leading-relaxed">
+                Tender mutton, chargrilled to perfection.
+              </p>
+            </div>
+          </div>
+          <div class="pt-3 flex justify-end">
+            <button 
+              @click.stop="addToCartById(3)"
+              type="button"
+              class="px-3.5 py-1.5 rounded-full border border-lightBorder hover:border-caramel hover:bg-caramel-light text-charcoal hover:text-caramel text-xs font-medium transition-colors flex items-center gap-1"
+            >
+              <i data-lucide="plus" class="w-3 h-3"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Chicken Tikka -->
+        <div class="bg-white rounded-xl overflow-hidden group flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+              <img 
+                src="assets/chicken_tikka.jpg" 
+                alt="Chicken Tikka" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="pt-3.5 space-y-1 text-left">
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-medium text-charcoal text-sm">Chicken Tikka</h3>
+                <span class="font-sans font-semibold text-charcoal text-sm">৳ 340</span>
+              </div>
+              <p class="text-xs text-stoneGrey leading-relaxed">
+                Classic favourite with rich, smoky flavour.
+              </p>
+            </div>
+          </div>
+          <div class="pt-3 flex justify-end">
+            <button 
+              @click.stop="addToCartById(2)"
+              type="button"
+              class="px-3.5 py-1.5 rounded-full border border-lightBorder hover:border-caramel hover:bg-caramel-light text-charcoal hover:text-caramel text-xs font-medium transition-colors flex items-center gap-1"
+            >
+              <i data-lucide="plus" class="w-3 h-3"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Naan -->
+        <div class="bg-white rounded-xl overflow-hidden group flex flex-col justify-between">
+          <div>
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+              <img 
+                src="assets/special_naan.jpg" 
+                alt="Naan" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="pt-3.5 space-y-1 text-left">
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-medium text-charcoal text-sm">Naan</h3>
+                <span class="font-sans font-semibold text-charcoal text-sm">৳ 60</span>
+              </div>
+              <p class="text-xs text-stoneGrey leading-relaxed">
+                Soft and fresh, baked to perfection.
+              </p>
+            </div>
+          </div>
+          <div class="pt-3 flex justify-end">
+            <button 
+              @click.stop="addToCartById(24)"
+              type="button"
+              class="px-3.5 py-1.5 rounded-full border border-lightBorder hover:border-caramel hover:bg-caramel-light text-charcoal hover:text-caramel text-xs font-medium transition-colors flex items-center gap-1"
+            >
+              <i data-lucide="plus" class="w-3 h-3"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= OUR MENU ================= -->
+  <section id="menu" class="py-16 sm:py-24 border-b border-lightBorder scroll-mt-14">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-[10px] uppercase tracking-[0.25em] text-caramel font-semibold block mb-2">
+          Explore
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal">
+          Our Menu
+        </h2>
+        <p class="text-xs sm:text-sm text-stoneGrey mt-3 leading-relaxed">
+          A carefully crafted selection of kebabs, curries, and classic dishes made with the finest ingredients.
+        </p>
+      </div>
+
+      <!-- Filter Pills Row -->
+      <div class="flex items-center justify-center gap-2 overflow-x-auto no-scrollbar py-2 mb-6">
+        <template x-for="cat in menuData.categories" :key="cat.id">
+          <button 
+            @click="activeCategory = cat.id; searchQuery = ''" 
+            type="button"
+            :class="activeCategory === cat.id ? 'bg-caramel text-white shadow-xs' : 'bg-softBg text-neutral-600 hover:bg-neutral-200/60 hover:text-charcoal'"
+            class="px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-colors whitespace-nowrap min-h-[38px]"
+            x-text="cat.name"
+          ></button>
+        </template>
+      </div>
+
+      <!-- Search Input Box -->
+      <div class="relative max-w-xs ml-auto mb-10">
+        <label for="search-field" class="sr-only">Search menu</label>
+        <div class="relative flex items-center">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-stoneGrey absolute left-3.5 pointer-events-none"></i>
+          <input 
+            id="search-field"
+            type="search" 
+            x-model="searchQuery" 
+            placeholder="Search menu..." 
+            class="w-full pl-9 pr-4 py-2 rounded-full border border-lightBorder bg-white focus:border-caramel focus:outline-none text-xs text-charcoal placeholder-stoneGrey transition-colors min-h-[38px]"
+          />
+        </div>
+      </div>
+
+      <!-- Menu Items Grouped by Category -->
+      <div class="space-y-12">
+        <template x-for="catGroup in groupedItems" :key="catGroup.categoryName">
+          <div x-show="catGroup.items.length > 0" class="space-y-4">
+            
+            <!-- Category Group Title -->
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal font-medium pb-2 border-b border-lightBorder" x-text="catGroup.categoryName"></h3>
+
+            <!-- Item Rows in this Category with clean divider lines -->
+            <div class="divide-y divide-lightBorder">
+              <template x-for="item in catGroup.items" :key="item.id">
+                <div 
+                  @click="openItemModal(item)"
+                  class="flex items-center justify-between gap-4 py-3.5 cursor-pointer group hover:bg-softBg/60 px-2 -mx-2 rounded-lg transition-colors"
+                  role="button"
+                  tabindex="0"
+                  @keydown.enter="openItemModal(item)"
+                >
+                  <!-- Dish Thumbnail -->
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden bg-softBg border border-lightBorder shrink-0">
+                    <img 
+                      :src="item.image" 
+                      :alt="item.name" 
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      onerror="this.src='assets/reshmi_kebab.jpg'"
+                    />
+                  </div>
+
+                  <!-- Details -->
+                  <div class="flex-1 text-left min-w-0">
+                    <h4 class="text-sm sm:text-base font-semibold text-charcoal group-hover:text-caramel transition-colors truncate" x-text="item.name"></h4>
+                    <p class="text-xs text-stoneGrey mt-0.5 truncate" x-text="item.description"></p>
+                  </div>
+
+                  <!-- Price & Quick Add Button -->
+                  <div class="flex items-center gap-3 shrink-0">
+                    <span class="font-sans font-semibold text-sm sm:text-base text-neutral-900 tracking-tight" x-text="item.priceFormatted"></span>
+                    <button 
+                      @click.stop="addToCart(item)"
+                      type="button"
+                      class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-lightBorder hover:border-caramel hover:bg-caramel-light text-stoneGrey hover:text-caramel flex items-center justify-center transition-colors"
+                      :title="'Add ' + item.name + ' to order'"
+                      aria-label="Add to order"
+                    >
+                      <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+          </div>
+        </template>
+      </div>
+
+      <!-- Empty State -->
+      <div x-show="totalFilteredCount === 0" class="text-center py-12">
+        <p class="font-serif text-xl text-stoneGrey">No dishes found matching your search.</p>
+        <button 
+          @click="searchQuery = ''; activeCategory = 'all'" 
+          type="button" 
+          class="mt-3 text-xs text-caramel hover:underline uppercase tracking-wider"
+        >
+          Reset Menu Filters
+        </button>
+      </div>
+
+      <!-- Online Delivery Callout Card matching media_1789375143037.png -->
+      <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-[#FFF5F7] border border-[#FCD5DF] flex flex-col sm:flex-row items-center justify-between gap-6 text-left shadow-2xs">
+        <div>
+          <div class="flex items-center gap-2.5 mb-1.5">
+            <h3 class="font-medium text-base text-neutral-900">Craving Woondaal at Home?</h3>
+            <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#D70F64] bg-white px-2.5 py-0.5 rounded-full border border-pink-200 shadow-2xs">
+              ★ 4.5
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+            Order fresh kebabs, tandoori curries &amp; biryani straight to your doorstep in Sylhet on Foodpanda.
+          </p>
+        </div>
+        
+        <div class="shrink-0">
+          <a 
+            href="https://www.foodpanda.com.bd/restaurant/s1hd/woondaal-king-kebab" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-1.5 px-8 py-3.5 rounded-full bg-[#D70F64] hover:bg-[#c21760] text-white text-xs uppercase tracking-wider font-bold transition-all shadow-xs hover:shadow-md min-h-[46px]"
+          >
+            <span>ORDER ON FOODPANDA</span>
+            <span class="text-xs font-normal">↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT WOONDAAL ================= -->
+  <section id="about" class="py-16 sm:py-24 border-b border-lightBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Copy & Badges (7 cols) -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          
+          <span class="text-[10px] uppercase tracking-[0.25em] text-caramel font-semibold block">
+            About Woondaal
+          </span>
+
+          <h2 class="font-serif text-3xl sm:text-5xl text-charcoal font-normal leading-[1.12]">
+            A Place for<br />
+            Great Food and<br />
+            Good Company
+          </h2>
+
+          <p class="text-xs sm:text-sm text-stoneGrey font-light leading-relaxed max-w-xl">
+            Woondaal King Kebab is a beloved dining destination in Sylhet, known for its authentic kebabs and rich flavours. We bring together traditional recipes and quality ingredients to create a memorable dining experience for our guests.
+          </p>
+
+          <!-- 3 Quality Feature Badges matching mockup -->
+          <div class="pt-8 grid grid-cols-3 gap-6 max-w-lg text-center">
+            
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-caramel mb-2">
+                <i data-lucide="utensils" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-sm sm:text-base text-charcoal font-medium leading-tight">Authentic<br />Flavours</h3>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-caramel mb-2">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-sm sm:text-base text-charcoal font-medium leading-tight">Quality<br />Ingredients</h3>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-caramel mb-2">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-sm sm:text-base text-charcoal font-medium leading-tight">A Welcoming<br />Atmosphere</h3>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Restaurant Interior Image matching mockup (5 cols) -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden shadow-lg border border-lightBorder aspect-[4/3] bg-neutral-900">
+            <img 
+              src="assets/woondaal_interior.jpg" 
+              alt="Woondaal King Kebab Restaurant Dining Interior" 
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= GALLERY ================= -->
+  <section id="gallery" class="py-16 sm:py-24 border-b border-lightBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="mb-10 text-left">
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
+          Gallery
+        </h2>
+        <p class="text-xs sm:text-sm text-stoneGrey mt-1">
+          A glimpse into our food, ambiance, and the Woondaal experience.
+        </p>
+      </div>
+
+      <!-- Multi-photo Grid matching mockup -->
+      <div class="space-y-4">
+        
+        <!-- Top Row: 3 Photos -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/woondaal_interior.jpg" 
+              alt="Woondaal Interior" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/hero_skewers.jpg" 
+              alt="Chargrilled Skewers" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/booth_seating.jpg" 
+              alt="Dining Room Seating" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Bottom Row: 4 Photos -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/curry_bowl.jpg" 
+              alt="Curry Bowl" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/special_naan.jpg" 
+              alt="Fresh Naan in Basket" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/dessert_special.jpg" 
+              alt="Special Dessert" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-softBg border border-lightBorder">
+            <img 
+              src="assets/tandoori_prawn.jpg" 
+              alt="Tandoori Delicacy" 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= GOOGLE & DINER REVIEWS ================= -->
+  <section id="reviews" class="py-16 sm:py-24 border-b border-lightBorder scroll-mt-14 bg-[#FCFCFB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header matching media_1789375109785.png -->
+      <div class="max-w-xl text-left mb-12 sm:mb-16">
+        <span class="text-[10px] uppercase tracking-[0.25em] text-[#855B32] font-semibold block mb-2">
+          Guest Experiences
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
+          Loved by Sylhet &amp; Guests Worldwide
+        </h2>
+        <p class="text-xs sm:text-sm text-stoneGrey mt-2 leading-relaxed">
+          Authentic feedback from thousands of diners who celebrate moments and enjoy legendary charcoal kebabs with us.
+        </p>
+      </div>
+
+      <!-- 4 Curated Review Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Review 1: Tanvir Hasan -->
+        <div class="bg-white p-6 rounded-2xl border border-lightBorder shadow-2xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-[10px] text-stoneGrey ml-1.5 font-medium">5.0</span>
+            </div>
+            <p class="text-xs text-charcoal leading-relaxed">
+              &ldquo;One of the best places in Sylhet for authentic charcoal kebabs and tandoori naan. The Chicken Reshmi Kebab was extremely juicy and tender, and the garlic naan straight from the tandoor was perfection.&rdquo;
+            </p>
+          </div>
+          
+          <div class="pt-5 mt-4 border-t border-lightBorder/80 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-caramel-light text-caramel font-serif font-bold text-xs flex items-center justify-center shrink-0">
+              TH
+            </div>
+            <div class="text-left leading-tight">
+              <span class="font-semibold text-xs text-charcoal block">Tanvir Hasan</span>
+              <span class="text-[10px] text-stoneGrey flex items-center gap-1">
+                <span>Local Guide</span> • <span>Google Maps</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Sazzad Ahmed -->
+        <div class="bg-white p-6 rounded-2xl border border-lightBorder shadow-2xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-[10px] text-stoneGrey ml-1.5 font-medium">5.0</span>
+            </div>
+            <p class="text-xs text-charcoal leading-relaxed">
+              &ldquo;The mixed kebab platter is an absolute must-try whenever visiting Sylhet. Freshly baked garlic naan, aromatic spices, and attentive service in an elegant family environment right in East Zindabazar.&rdquo;
+            </p>
+          </div>
+          
+          <div class="pt-5 mt-4 border-t border-lightBorder/80 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-caramel-light text-caramel font-serif font-bold text-xs flex items-center justify-center shrink-0">
+              SA
+            </div>
+            <div class="text-left leading-tight">
+              <span class="font-semibold text-xs text-charcoal block">Sazzad Ahmed</span>
+              <span class="text-[10px] text-stoneGrey flex items-center gap-1">
+                <span>Local Guide</span> • <span>Google Maps</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Mahfuzur Rahman -->
+        <div class="bg-white p-6 rounded-2xl border border-lightBorder shadow-2xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-[10px] text-stoneGrey ml-1.5 font-medium">5.0</span>
+            </div>
+            <p class="text-xs text-charcoal leading-relaxed">
+              &ldquo;Great dining experience with family. Their chicken tikka and special biryani were top notch. Ambiance is warm, refined, and comfortable. Highly recommended for dinner with guests.&rdquo;
+            </p>
+          </div>
+          
+          <div class="pt-5 mt-4 border-t border-lightBorder/80 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-caramel-light text-caramel font-serif font-bold text-xs flex items-center justify-center shrink-0">
+              MR
+            </div>
+            <div class="text-left leading-tight">
+              <span class="font-semibold text-xs text-charcoal block">Mahfuzur Rahman</span>
+              <span class="text-[10px] text-stoneGrey flex items-center gap-1">
+                <span>Verified Diner</span> • <span>Google Maps</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: Farhana Choudhury -->
+        <div class="bg-white p-6 rounded-2xl border border-lightBorder shadow-2xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-[10px] text-stoneGrey ml-1.5 font-medium">5.0</span>
+            </div>
+            <p class="text-xs text-charcoal leading-relaxed">
+              &ldquo;Authentic taste, clean environment, and wonderful charcoal grilled items. The reshmi kebab and mutton boti are cooked to perfection with just the right amount of smoke and spice.&rdquo;
+            </p>
+          </div>
+          
+          <div class="pt-5 mt-4 border-t border-lightBorder/80 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-caramel-light text-caramel font-serif font-bold text-xs flex items-center justify-center shrink-0">
+              FC
+            </div>
+            <div class="text-left leading-tight">
+              <span class="font-semibold text-xs text-charcoal block">Farhana Choudhury</span>
+              <span class="text-[10px] text-stoneGrey flex items-center gap-1">
+                <span>Verified Diner</span> • <span>Google Maps</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Footer Links matching media_1789375109785.png -->
+      <div class="mt-12 pt-8 border-t border-lightBorder/80 flex items-center justify-center gap-4 text-xs text-[#855B32] font-medium">
+        <a 
+          href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="hover:text-charcoal transition-colors flex items-center gap-1"
+        >
+          <span>Reviews on Maps</span>
+          <span>↗</span>
+        </a>
+
+        <span class="text-neutral-300">•</span>
+
+        <a 
+          href="https://www.foodpanda.com.bd/restaurant/s1hd/woondaal-king-kebab" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="hover:text-charcoal transition-colors flex items-center gap-1"
+        >
+          <span>Ratings on Foodpanda</span>
+          <span>↗</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= LOCATION & CONTACT ================= -->
+  <section id="visit" class="py-16 sm:py-24 border-b border-lightBorder scroll-mt-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Details & Action Pills (6 cols) -->
+        <div class="lg:col-span-6 space-y-6 text-left">
+          
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-[#855B32] font-semibold block mb-2">
+              Visit Us
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-charcoal font-normal leading-tight">
+              Location &amp; Contact
+            </h2>
+            <p class="text-xs sm:text-sm text-stoneGrey mt-3 leading-relaxed">
+              We'd love to welcome you. Visit us for an unforgettable dining experience in Sylhet.
+            </p>
+          </div>
+
+          <!-- Contact items matching mockup -->
+          <div class="space-y-4 pt-2 text-xs sm:text-sm text-charcoal">
+            
+            <!-- Address -->
+            <div class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-caramel shrink-0"></i>
+              <span>465, East Zindabazar, Baruthkhana Road, Sylhet 3100, Bangladesh</span>
+            </div>
+
+            <!-- Call -->
+            <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-caramel shrink-0"></i>
+              <div class="flex items-center gap-1.5">
+                <span class="text-stoneGrey">Call:</span>
+                <a href="tel:+8801717020505" class="hover:text-caramel transition-colors font-medium">
+                  +880 1717-020505
+                </a>
+              </div>
+            </div>
+
+            <!-- Open Daily -->
+            <div class="flex items-center gap-3">
+              <i data-lucide="clock" class="w-4 h-4 text-caramel shrink-0"></i>
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-charcoal">Open Daily</span>
+                <span class="text-stoneGrey text-xs font-light">11:00 AM – 11:00 PM</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Action Buttons matching media_1789375045037.png -->
+          <div class="pt-4 flex flex-wrap items-center gap-3">
+            <a 
+              href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#7D532C] hover:bg-[#684321] text-white text-xs uppercase tracking-[0.18em] font-bold transition-all shadow-xs min-h-[46px]"
+            >
+              GET DIRECTIONS
+            </a>
+
+            <a 
+              href="https://wa.me/8801717020505?text=Hello%20Woondaal%20King%20Kebab%2C%20I%20would%20like%20to%20inquire%20about%20a%20table%20or%20order." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#404040] hover:bg-[#2d2d2d] text-white text-xs uppercase tracking-[0.18em] font-bold transition-all shadow-xs min-h-[46px]"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>CHAT ON WHATSAPP</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Stylized Google Maps Card (6 cols) matching mockup -->
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl overflow-hidden border border-lightBorder shadow-xs bg-white relative">
+            
+            <!-- Top-Left Floating Info Card matching Google Maps snippet in mockup -->
+            <div class="absolute top-3.5 left-3.5 z-20 bg-white/95 backdrop-blur-xs rounded-xl shadow-md p-3 border border-black/5 max-w-[250px] text-left">
+              <div class="flex items-start justify-between gap-2.5">
+                <div>
+                  <h4 class="font-semibold text-xs text-charcoal leading-tight">Woondaal King Kebab</h4>
+                  <p class="text-[10px] text-stoneGrey truncate mt-0.5">East Zindabazar, Baruthkhana ...</p>
+                  <div class="flex items-center gap-1.5 mt-1 text-[11px]">
+                    <span class="font-bold text-neutral-800">4.1</span>
+                    <span class="text-amber-500 text-xs">★</span>
+                    <a href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline text-[10.5px]">(2,937)</a>
+                    <span class="text-stoneGrey text-[10px]">ⓘ</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1 shrink-0 text-blue-600">
+                  <a href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" target="_blank" rel="noopener noreferrer" title="View larger map" class="p-1 rounded hover:bg-neutral-100 text-blue-600">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  </a>
+                  <a href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" target="_blank" rel="noopener noreferrer" title="Get Directions" class="p-1 rounded bg-blue-600 text-white hover:bg-blue-700">
+                    <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map iframe with clean styling -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.995960012282!2d91.86868081134262!3d24.898099343603407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375054d57e3993d1%3A0xb1d8b48c003c486a!2sWoondaal%20King%20Kebab!5e0!3m2!1sen!2sbd!4v1710400000000!5m2!1sen!2sbd" 
+              width="100%" 
+              height="380" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Woondaal King Kebab Location"
+              class="w-full h-[380px] block"
+            ></iframe>
+
+            <!-- Center Pin Overlay matching mockup -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
+              <div class="bg-white/95 backdrop-blur-xs px-3.5 py-1.5 rounded-xl shadow-md border border-lightBorder flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                <div class="text-left leading-tight">
+                  <span class="font-semibold text-xs text-charcoal block">Woondaal King Kebab</span>
+                  <span class="text-[10px] text-stoneGrey block">465, East Zindabazar, Sylhet</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-8">
+      
+      <!-- Brand Logo -->
+      <div class="flex flex-col items-center">
+        <svg class="w-5 h-5 text-caramel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+        </svg>
+        <span class="font-serif text-lg font-semibold tracking-[0.22em] text-charcoal uppercase leading-tight mt-1">
+          Woondaal
+        </span>
+        <span class="text-[7.5px] tracking-[0.3em] font-medium text-stoneGrey uppercase">
+          King Kebab
+        </span>
+      </div>
+
+      <!-- Footer Navigation Links (Row 1) -->
+      <nav class="flex flex-wrap items-center justify-center gap-x-7 sm:gap-x-9 gap-y-2.5 text-xs sm:text-[13px] text-stoneGrey">
+        <a href="#top" class="hover:text-charcoal transition-colors">Home</a>
+        <a href="#menu" class="hover:text-charcoal transition-colors">Menu</a>
+        <a href="#about" class="hover:text-charcoal transition-colors">About</a>
+        <a href="#gallery" class="hover:text-charcoal transition-colors">Gallery</a>
+        <a href="#reviews" class="hover:text-charcoal transition-colors">Reviews</a>
+        <a href="#visit" class="hover:text-charcoal transition-colors">Visit &amp; Contact</a>
+      </nav>
+
+      <!-- Channels & Secondary Links (Row 2) -->
+      <div class="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-2 text-xs sm:text-[13px] text-stoneGrey">
+        <a 
+          href="https://wa.me/8801717020505?text=Hello%20Woondaal%20King%20Kebab%2C%20I%20would%20like%20to%20inquire%20about%20a%20table%20or%20order." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="hover:text-charcoal transition-colors"
+        >
+          WhatsApp
+        </a>
+
+        <a 
+          href="https://www.foodpanda.com.bd/restaurant/s1hd/woondaal-king-kebab" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="hover:text-charcoal transition-colors"
+        >
+          Foodpanda
+        </a>
+
+        <a 
+          href="https://maps.app.goo.gl/6CX57Ad3P3itRKwUA" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="hover:text-charcoal transition-colors"
+        >
+          Google Maps
+        </a>
+
+        <a 
+          href="tel:+8801717020505" 
+          class="hover:text-charcoal transition-colors"
+        >
+          Call: +880 1717-020505
+        </a>
+
+        <a 
+          href="https://facebook.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="hover:text-charcoal transition-colors"
+        >
+          Facebook
+        </a>
+      </div>
+
+      <!-- Bottom Copyright & Tagline matching mockup -->
+      <div class="pt-6 border-t border-lightBorder flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stoneGrey">
+        <p>© 2026 Woondaal King Kebab. All rights reserved.</p>
+        <p class="font-light">Designed for great food and better moments.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================= FLOATING STICKY BOTTOM ORDER BAR ================= -->
+  <div 
+    x-show="cartTotalCount > 0 && !cartDrawerOpen" 
+    x-cloak
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 translate-y-6"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 translate-y-6"
+    class="fixed bottom-5 inset-x-0 z-40 flex justify-center px-4 pointer-events-none"
+  >
+    <button 
+      @click="cartDrawerOpen = true"
+      type="button"
+      class="pointer-events-auto flex items-center justify-between gap-4 px-6 py-3.5 rounded-full bg-charcoal hover:bg-neutral-800 text-white shadow-xl border border-neutral-700 text-xs tracking-wider transition-all transform hover:scale-105 active:scale-95 min-w-[280px] sm:min-w-[340px]"
+    >
+      <div class="flex items-center gap-2.5">
+        <span class="w-6 h-6 rounded-full bg-caramel text-white text-xs font-bold flex items-center justify-center" x-text="cartTotalCount"></span>
+        <span class="font-medium">View Your Order</span>
+      </div>
+      <div class="flex items-center gap-2 font-sans">
+        <span class="font-semibold text-sm" x-text="cartTotalPriceFormatted"></span>
+        <span>→</span>
+      </div>
+    </button>
+  </div>
+
+
+  <!-- ================= SLIDE-OVER ORDER DRAWER ================= -->
+  <div 
+    x-show="cartDrawerOpen" 
+    x-cloak 
+    class="fixed inset-0 z-50 overflow-hidden"
+    role="dialog" 
+    aria-modal="true"
+    aria-labelledby="drawer-title"
+    @keydown.escape.window="cartDrawerOpen = false"
+  >
+    <!-- Backdrop -->
+    <div 
+      x-show="cartDrawerOpen"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity" 
+      @click="cartDrawerOpen = false"
+    ></div>
+
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div 
+        x-show="cartDrawerOpen"
+        x-transition:enter="transform transition ease-in-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transform transition ease-in-out duration-200"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between border-l border-lightBorder text-left"
+      >
+        <!-- Drawer Header -->
+        <div class="p-5 sm:p-6 border-b border-lightBorder flex items-center justify-between">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.25em] text-caramel font-semibold block">Woondaal King Kebab</span>
+            <h2 id="drawer-title" class="font-serif text-2xl text-charcoal font-medium">Your Order</h2>
+          </div>
+          <button 
+            @click="cartDrawerOpen = false" 
+            type="button" 
+            class="p-2 text-stoneGrey hover:text-charcoal rounded-full hover:bg-softBg transition-colors"
+            aria-label="Close order drawer"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Drawer Content / Items List -->
+        <div class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-4">
+          <template x-if="cart.length === 0">
+            <div class="py-16 text-center space-y-3">
+              <div class="w-12 h-12 rounded-full bg-softBg border border-lightBorder flex items-center justify-center mx-auto text-stoneGrey">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              </div>
+              <p class="font-serif text-xl text-charcoal font-normal">Your tray is empty</p>
+              <p class="text-xs text-stoneGrey max-w-xs mx-auto">Explore our menu and add your favorite kebabs, naans, and curries.</p>
+              <button 
+                @click="cartDrawerOpen = false; const m = document.getElementById('menu'); if(m) m.scrollIntoView({behavior:'smooth'});"
+                type="button" 
+                class="mt-2 inline-flex px-5 py-2 rounded-full bg-caramel text-white text-xs uppercase tracking-wider font-medium"
+              >
+                Browse Menu
+              </button>
+            </div>
+          </template>
+
+          <template x-if="cart.length > 0">
+            <div class="space-y-4">
+              <!-- List of items -->
+              <div class="divide-y divide-lightBorder">
+                <template x-for="item in cart" :key="item.id">
+                  <div class="py-3.5 flex items-center justify-between gap-3">
+                    <!-- Thumbnail -->
+                    <div class="w-12 h-12 rounded-lg overflow-hidden bg-softBg border border-lightBorder shrink-0">
+                      <img :src="item.image" :alt="item.name" class="w-full h-full object-cover" onerror="this.src='assets/reshmi_kebab.jpg'" />
+                    </div>
+                    
+                    <!-- Info -->
+                    <div class="flex-1 min-w-0">
+                      <h4 class="text-xs sm:text-sm font-semibold text-charcoal truncate" x-text="item.name"></h4>
+                      <p class="text-xs text-stoneGrey font-sans font-medium" x-text="'৳ ' + item.price + ' each'"></p>
+                    </div>
+
+                    <!-- Quantity Controls -->
+                    <div class="flex items-center border border-lightBorder rounded-full bg-softBg px-2 py-0.5 shrink-0">
+                      <button 
+                        @click="updateQuantity(item.id, -1)" 
+                        type="button" 
+                        class="w-5 h-5 text-stoneGrey hover:text-charcoal flex items-center justify-center font-bold text-xs"
+                        aria-label="Decrease quantity"
+                      >–</button>
+                      <span class="w-6 text-center text-xs font-semibold text-charcoal" x-text="item.quantity"></span>
+                      <button 
+                        @click="updateQuantity(item.id, 1)" 
+                        type="button" 
+                        class="w-5 h-5 text-stoneGrey hover:text-charcoal flex items-center justify-center font-bold text-xs"
+                        aria-label="Increase quantity"
+                      >+</button>
+                    </div>
+
+                    <!-- Line Subtotal -->
+                    <div class="text-right shrink-0 min-w-[50px]">
+                      <span class="font-sans font-semibold text-xs sm:text-sm text-charcoal" x-text="'৳ ' + (item.price * item.quantity)"></span>
+                    </div>
+
+                    <!-- Remove icon -->
+                    <button 
+                      @click="removeFromCart(item.id)" 
+                      type="button" 
+                      class="text-neutral-400 hover:text-red-600 p-1 transition-colors"
+                      aria-label="Remove item"
+                    >
+                      <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </template>
+              </div>
+
+              <!-- Customer Details & Order Preferences Form -->
+              <div class="pt-4 border-t border-lightBorder space-y-3">
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1.5">Order Preference</label>
+                  <div class="grid grid-cols-3 gap-2">
+                    <button 
+                      type="button"
+                      @click="orderType = 'Takeaway'"
+                      :class="orderType === 'Takeaway' ? 'bg-caramel text-white font-medium border-caramel' : 'bg-softBg text-stoneGrey border-lightBorder'"
+                      class="py-2 text-xs rounded-lg border text-center transition-colors"
+                    >
+                      Takeaway
+                    </button>
+                    <button 
+                      type="button"
+                      @click="orderType = 'Dine-In'"
+                      :class="orderType === 'Dine-In' ? 'bg-caramel text-white font-medium border-caramel' : 'bg-softBg text-stoneGrey border-lightBorder'"
+                      class="py-2 text-xs rounded-lg border text-center transition-colors"
+                    >
+                      Dine-In
+                    </button>
+                    <button 
+                      type="button"
+                      @click="orderType = 'Delivery'"
+                      :class="orderType === 'Delivery' ? 'bg-caramel text-white font-medium border-caramel' : 'bg-softBg text-stoneGrey border-lightBorder'"
+                      class="py-2 text-xs rounded-lg border text-center transition-colors"
+                    >
+                      Delivery
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Your Name</label>
+                  <input 
+                    type="text" 
+                    x-model="customerName"
+                    placeholder="e.g. Tanvir Ahmed"
+                    class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Delivery Address or Special Notes (Optional)</label>
+                  <textarea 
+                    x-model="customerNotes"
+                    rows="2"
+                    placeholder="e.g. Less spicy, East Zindabazar, Sylhet"
+                    class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none resize-none"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Drawer Footer with WhatsApp Action -->
+        <div x-show="cart.length > 0" class="p-5 sm:p-6 border-t border-lightBorder bg-softBg space-y-3">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-stoneGrey">Total Amount</span>
+            <span class="font-sans font-bold text-lg text-charcoal" x-text="cartTotalPriceFormatted"></span>
+          </div>
+
+          <button 
+            @click="checkoutWhatsApp()"
+            type="button"
+            class="w-full py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-md flex items-center justify-center gap-2 hover:shadow-lg active:scale-98 min-h-[46px]"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Send Order via WhatsApp (৳ <span x-text="cartTotalPrice"></span>)</span>
+          </button>
+
+          <div class="relative flex items-center py-1">
+            <div class="flex-grow border-t border-lightBorder"></div>
+            <span class="flex-shrink mx-3 text-[10px] uppercase tracking-wider text-stoneGrey font-medium">Or Delivery App</span>
+            <div class="flex-grow border-t border-lightBorder"></div>
+          </div>
+
+          <a 
+            href="https://www.foodpanda.com.bd/restaurant/s1hd/woondaal-king-kebab" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="w-full py-3 rounded-full bg-[#D70F64] hover:bg-[#c21760] text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-xs flex items-center justify-center gap-2 hover:shadow-md min-h-[44px]"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+            <span>Order on Foodpanda (4.5 ★)</span>
+          </a>
+
+          <p class="text-[10px] text-center text-stoneGrey pt-1">
+            Direct WhatsApp ordering to <strong>+880 1717-020505</strong> or doorstep delivery via Foodpanda Sylhet.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= RESERVE A TABLE MODAL ================= -->
+  <div 
+    x-show="reservationModalOpen" 
+    x-cloak 
+    class="fixed inset-0 z-50 overflow-y-auto"
+    role="dialog" 
+    aria-modal="true"
+    aria-labelledby="modal-reserve-title"
+    @keydown.escape.window="reservationModalOpen = false"
+  >
+    <div 
+      x-show="reservationModalOpen"
+      x-transition:enter="ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity" 
+      @click="reservationModalOpen = false"
+    ></div>
+
+    <div class="flex min-h-full items-center justify-center p-4">
+      <div 
+        x-show="reservationModalOpen"
+        x-transition:enter="ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="ease-in duration-150"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 sm:p-8 text-left border border-lightBorder"
+      >
+        <button 
+          @click="reservationModalOpen = false" 
+          type="button" 
+          class="absolute top-4 right-4 p-2 text-stoneGrey hover:text-charcoal rounded-full hover:bg-softBg"
+          aria-label="Close modal"
+        >
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+
+        <div class="mb-6">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-caramel font-semibold block mb-1">
+            Table Reservation
+          </span>
+          <h3 id="modal-reserve-title" class="font-serif text-2xl text-charcoal font-medium">
+            Reserve Your Table
+          </h3>
+          <p class="text-xs text-stoneGrey mt-1">
+            Join us at Woondaal King Kebab in East Zindabazar, Sylhet.
+          </p>
+        </div>
+
+        <form @submit.prevent="submitReservation()" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-medium text-charcoal mb-1">Date</label>
+              <input 
+                type="date" 
+                required 
+                x-model="reserveForm.date"
+                class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-charcoal mb-1">Time</label>
+              <select 
+                x-model="reserveForm.time"
+                class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none"
+              >
+                <option>12:00 PM</option>
+                <option>01:00 PM</option>
+                <option>02:00 PM</option>
+                <option>07:00 PM</option>
+                <option>08:00 PM</option>
+                <option>09:00 PM</option>
+                <option>10:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-charcoal mb-1">Number of Guests</label>
+            <select 
+              x-model="reserveForm.guests"
+              class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none"
+            >
+              <option>1 Person</option>
+              <option>2 People</option>
+              <option>3 - 4 People</option>
+              <option>5 - 8 People</option>
+              <option>9+ People (Large Party)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-charcoal mb-1">Your Name</label>
+            <input 
+              type="text" 
+              required 
+              placeholder="e.g. Tanvir Ahmed"
+              x-model="reserveForm.name"
+              class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-charcoal mb-1">Contact Phone</label>
+            <input 
+              type="tel" 
+              required 
+              placeholder="e.g. 01717-000000"
+              x-model="reserveForm.phone"
+              class="w-full px-3 py-2 text-xs rounded-lg border border-lightBorder bg-softBg focus:bg-white focus:border-caramel focus:outline-none"
+            />
+          </div>
+
+          <div x-show="reserveSuccess" class="p-3 bg-emerald-50 text-emerald-800 rounded-lg text-xs">
+            ✓ Reservation received! We look forward to welcoming you at Woondaal.
+          </div>
+
+          <div class="pt-2 flex flex-col gap-2">
+            <button 
+              type="submit" 
+              class="w-full py-3 rounded-full bg-caramel hover:bg-caramel-hover text-white text-xs uppercase tracking-widest font-medium transition-colors shadow-xs"
+            >
+              Confirm Reservation
+            </button>
+
+            <a 
+              href="tel:+8801717020505" 
+              class="w-full py-2.5 rounded-full border border-lightBorder text-charcoal text-xs uppercase tracking-wider font-medium text-center hover:bg-softBg transition-colors flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-caramel"></i>
+              <span>Or Call +880 1717-020505</span>
+            </a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= DISH DETAILS MODAL ================= -->
+  <div 
+    x-show="itemModalOpen" 
+    x-cloak 
+    class="fixed inset-0 z-50 overflow-y-auto"
+    role="dialog" 
+    aria-modal="true"
+    @keydown.escape.window="itemModalOpen = false"
+  >
+    <div 
+      x-show="itemModalOpen"
+      x-transition:enter="ease-out duration-200"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity" 
+      @click="itemModalOpen = false"
+    ></div>
+
+    <div class="flex min-h-full items-center justify-center p-4">
+      <div 
+        x-show="itemModalOpen"
+        x-transition:enter="ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="ease-in duration-150"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden text-left border border-lightBorder"
+      >
+        <button 
+          @click="itemModalOpen = false" 
+          type="button" 
+          class="absolute top-3 right-3 z-10 p-2 text-charcoal bg-white/85 rounded-full hover:bg-white transition-colors"
+          aria-label="Close modal"
+        >
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+
+        <template x-if="selectedItem">
+          <div>
+            <div class="aspect-[4/3] bg-softBg overflow-hidden">
+              <img 
+                :src="selectedItem.image" 
+                :alt="selectedItem.name" 
+                class="w-full h-full object-cover"
+                onerror="this.src='assets/reshmi_kebab.jpg'"
+              />
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-serif text-2xl text-charcoal font-medium" x-text="selectedItem.name"></h3>
+                <span class="font-sans text-lg sm:text-xl text-neutral-900 font-semibold tracking-tight" x-text="selectedItem.priceFormatted"></span>
+              </div>
+              <p class="text-xs text-stoneGrey leading-relaxed" x-text="selectedItem.description"></p>
+              
+              <!-- Quantity Stepper & Add to Order -->
+              <div class="pt-3 border-t border-lightBorder flex items-center justify-between gap-3">
+                <div class="flex items-center border border-lightBorder rounded-full bg-softBg px-3 py-1.5 shrink-0">
+                  <button 
+                    @click="if (modalQuantity > 1) modalQuantity--" 
+                    type="button" 
+                    class="w-6 h-6 text-stoneGrey hover:text-charcoal flex items-center justify-center font-bold text-sm"
+                  >–</button>
+                  <span class="w-8 text-center text-xs font-semibold text-charcoal" x-text="modalQuantity"></span>
+                  <button 
+                    @click="modalQuantity++" 
+                    type="button" 
+                    class="w-6 h-6 text-stoneGrey hover:text-charcoal flex items-center justify-center font-bold text-sm"
+                  >+</button>
+                </div>
+
+                <button 
+                  @click="addToCart(selectedItem, modalQuantity); itemModalOpen = false;"
+                  type="button"
+                  class="flex-1 py-2.5 rounded-full bg-caramel hover:bg-caramel-hover text-white text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-2 shadow-xs min-h-[40px]"
+                >
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span>Add to Order • ৳ <span x-text="selectedItem.price ? (selectedItem.price * modalQuantity) : selectedItem.priceFormatted"></span></span>
+                </button>
+              </div>
+
+              <div class="pt-2 text-center">
+                <a href="tel:+8801717020505" class="text-[11px] text-stoneGrey hover:text-caramel transition-colors inline-flex items-center gap-1">
+                  <i data-lucide="phone" class="w-3 h-3"></i>
+                  <span>Or call +880 1717-020505 to place order</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= APPLICATION CLIENT SCRIPT ================= -->
+  <script>
+    function restaurantApp() {
+      return {
+        scrolled: false,
+        mobileNavOpen: false,
+        reservationModalOpen: false,
+        itemModalOpen: false,
+        cartDrawerOpen: false,
+        selectedItem: null,
+        modalQuantity: 1,
+        activeCategory: 'all',
+        searchQuery: '',
+        menuData: window.WOONDAAL_MENU || { categories: [], items: [] },
+        
+        // Cart State
+        cart: [],
+        orderType: 'Takeaway',
+        customerName: '',
+        customerNotes: '',
+
+        // Reservation Form
+        reserveForm: {
+          date: '',
+          time: '08:00 PM',
+          guests: '2 People',
+          name: '',
+          phone: ''
+        },
+        reserveSuccess: false,
+
+        init() {
+          window.addEventListener('scroll', () => {
+            this.scrolled = window.scrollY > 20;
+          });
+
+          this.$nextTick(() => {
+            lucide.createIcons();
+          });
+        },
+
+        get filteredDishes() {
+          let list = this.menuData.items;
+          if (this.activeCategory !== 'all') {
+            list = list.filter(it => it.categoryId === this.activeCategory);
+          }
+          if (this.searchQuery.trim() !== '') {
+            const q = this.searchQuery.toLowerCase().trim();
+            list = list.filter(it => 
+              it.name.toLowerCase().includes(q) || 
+              (it.description && it.description.toLowerCase().includes(q)) ||
+              it.categoryName.toLowerCase().includes(q)
+            );
+          }
+          return list;
+        },
+
+        get totalFilteredCount() {
+          return this.filteredDishes.length;
+        },
+
+        get groupedItems() {
+          const list = this.filteredDishes;
+          if (this.activeCategory !== 'all') {
+            const catObj = this.menuData.categories.find(c => c.id === this.activeCategory);
+            return [{
+              categoryName: catObj ? catObj.name : 'Dishes',
+              items: list
+            }];
+          }
+
+          // Group by category order
+          const groups = [];
+          for (const cat of this.menuData.categories) {
+            if (cat.id === 'all') continue;
+            const itemsInCat = list.filter(it => it.categoryId === cat.id);
+            if (itemsInCat.length > 0) {
+              groups.push({
+                categoryName: cat.name,
+                items: itemsInCat
+              });
+            }
+          }
+          return groups;
+        },
+
+        // Cart Actions
+        addToCart(item, qty = 1) {
+          const existing = this.cart.find(c => c.id === item.id);
+          if (existing) {
+            existing.quantity += qty;
+          } else {
+            this.cart.push({
+              id: item.id,
+              name: item.name,
+              price: item.price || 0,
+              image: item.image,
+              quantity: qty
+            });
+          }
+          this.$nextTick(() => {
+            lucide.createIcons();
+          });
+        },
+
+        addToCartById(id) {
+          const item = this.menuData.items.find(it => it.id === id);
+          if (item) {
+            this.addToCart(item, 1);
+          }
+        },
+
+        updateQuantity(itemId, delta) {
+          const existing = this.cart.find(c => c.id === itemId);
+          if (!existing) return;
+          existing.quantity += delta;
+          if (existing.quantity <= 0) {
+            this.cart = this.cart.filter(c => c.id !== itemId);
+          }
+          this.$nextTick(() => {
+            lucide.createIcons();
+          });
+        },
+
+        removeFromCart(itemId) {
+          this.cart = this.cart.filter(c => c.id !== itemId);
+          this.$nextTick(() => {
+            lucide.createIcons();
+          });
+        },
+
+        get cartTotalCount() {
+          return this.cart.reduce((sum, it) => sum + it.quantity, 0);
+        },
+
+        get cartTotalPrice() {
+          return this.cart.reduce((sum, it) => sum + (it.price * it.quantity), 0);
+        },
+
+        get cartTotalPriceFormatted() {
+          return '৳ ' + this.cartTotalPrice;
+        },
+
+        checkoutWhatsApp() {
+          if (this.cart.length === 0) return;
+
+          let msg = `*Order from Woondaal King Kebab*\n\n`;
+          this.cart.forEach((it, idx) => {
+            const lineTotal = it.price * it.quantity;
+            msg += `${idx + 1}. ${it.name} x ${it.quantity} = ৳ ${lineTotal}\n`;
+          });
+
+          msg += `\n*Total Amount:* ৳ ${this.cartTotalPrice}\n`;
+          msg += `*Order Type:* ${this.orderType}\n`;
+
+          if (this.customerName && this.customerName.trim()) {
+            msg += `*Customer Name:* ${this.customerName.trim()}\n`;
+          }
+          if (this.customerNotes && this.customerNotes.trim()) {
+            msg += `*Notes / Address:* ${this.customerNotes.trim()}\n`;
+          }
+
+          msg += `\nPlease confirm my order. Thank you!`;
+
+          const phone = '8801717020505';
+          const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+          window.open(url, '_blank');
+        },
+
+        openItemModal(item) {
+          this.selectedItem = item;
+          this.modalQuantity = 1;
+          this.itemModalOpen = true;
+          this.$nextTick(() => {
+            lucide.createIcons();
+          });
+        },
+
+        submitReservation() {
+          this.reserveSuccess = true;
+          setTimeout(() => {
+            this.reservationModalOpen = false;
+            this.reserveSuccess = false;
+            this.reserveForm.name = '';
+            this.reserveForm.phone = '';
+          }, 2500);
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
